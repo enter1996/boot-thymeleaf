@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<th:block th:include="fragments/nav"></th:block>
+<div class="container" style="min-height: 500px">
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -18,14 +20,16 @@
   </thead>
 	<tbody>
 		<tr th:each="user : ${users}">
-		<th scope="row"><span th:text="${user.id}"></span></th>
-		<td><span th:text="${user.name}"></span></td>
+		<th scope="row">
+		<span th:text="${user.id}"></span></th>	
+		<td><a th:href="@{/users/{id}(id=${user.id})}">
+		<span th:text="${user.name}"></span>
+		</a></td>
 		<td><span th:text="${user.company}"></span></td>
 		</tr>
   </tbody>
 </table>
-	<div align=middle>
-		<a class="navbar-brand" href="javascript:history.back()">Back</a>
-	</div>
+ </div>
+<th:block th:include="fragments/footer"></th:block>
 </body>
 </html>

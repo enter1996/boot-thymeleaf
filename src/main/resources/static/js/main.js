@@ -18,7 +18,7 @@ function fire_ajax_submit() {
         formArray[n['name']] = n['value']; // key - value
     });
 
-    var json =JSON.stringify(formArray)
+    var json =JSON.stringify(formArray);
     console.log(json);
     $.ajax({
         type: 'post',
