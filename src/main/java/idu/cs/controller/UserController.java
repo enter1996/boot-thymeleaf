@@ -48,6 +48,11 @@ public class UserController {
 		session.setAttribute("user",sessionUser);
 		return "redirect:/";
 	}
+	@GetMapping("/logout")
+	public String logoutUser(HttpSession session) {
+		session.removeAttribute("user");
+		return "redirect:/";
+	}
 	@GetMapping("/user-register-form")
 	public String getRegForm(Model model) {
 		return "register";
