@@ -1,10 +1,38 @@
-<nav class="navbar navbar-inverse">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">Home</a>
-            <a class="navbar-brand" href="/user-reg-form">Register</a>
-            <a class="navbar-brand" href="/users">User-list</a>
-            
-        </div>
-    </div>
-</nav>
+         <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                	<a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li th:unless="${session.user}" class="nav-item">
+                                	<a class="nav-link" href="/user-login-form">LogIn</a>
+                                </li>
+                                <li th:unless="${session.user}" class="nav-item">
+                                	<a class="nav-link" href="/user-register-form">SingUp</a>
+                                </li>
+                                <li th:if="${session.user}" class="nav-item">
+	                            	<a class="nav-link" href="/logout">LogOut</a>
+    	                        </li>
+    	                        <li th:if="${session.user}" class="nav-item">
+    	                        	<a class="nav-link" href="/user-update">update</a>
+                                </li>
+                                <li class="nav-item">
+                                	<a class="nav-link" href="project.html">Portfolio</a>
+                                </li>
+                                <li class="nav-item">
+                                 	<a class="nav-link" href="blog.html">Blog</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        pages
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="single-blog.html">Single blog</a>
+                                        <a class="dropdown-item" href="elements.html">Elements</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
